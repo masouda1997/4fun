@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      :root{
+         interpolate-size: allow-keywords;
+      }
+      body{
+         background-color: azure;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+      }
+      .container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 2rem;
+         flex-direction: column;
+      }
+
+      span{
+         background-color: firebrick;
+         color: azure;
+         border: solid 5px;
+         border-color: brown;
+         padding-block: 1rem;
+         border-radius: 10px;
+         width: 50px;
+         white-space: nowrap;
+         overflow: hidden;
+         transition: width 300ms ;
+         /* transition: max-width 300ms ; */
+         /* max-width: 50px; */
+         
+         
+         &:hover{
+            /* not work without new feature */
+            /* width: min-content; */
+
+
+            /* not work in with the default calc size function */
+            /* width: calc(min-content + 2rem);  */
+            /* the new solution is to use bottom way */
+            width: calc-size(min-content, size + 2rem);
+
+
+            /* old way using max-width */
+            /* here is not dynamic  */
+            /* max-width: 840px; */
+            
+         }
+      }
+      
+   </style>
+</head>
+<body>
+   <div class="container">
+      <span>
+         Lorem ipsum dolor sit amet consectetur, adipisic
+      </span>
+      <span>
+         Doloribus asperiores id, dolore ad commodi sed incidunt est accusamus repellendus eum alias eos quo architecto explicabo quis vel 
+      </span>
+      <span>
+         Eligendi earum est debitis dolore blanditiis possimus ipsum? Nihil ratione non aspernatur recusandae suscipit amet ab et soluta delectus neque, iste quisquam aperiam fugit facere accusantium voluptate adipisci, odit consequatur.
+      </span>
+   </div>
+</body>
+</html>
